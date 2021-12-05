@@ -1,11 +1,17 @@
 package application;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -20,15 +26,10 @@ public class CalculatorController implements Initializable {
   
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        // TODO Auto-generated method stub
-      //  btnAdd.setOnAction(e -> Add());
-        //btnSubtract.setOnAction(e -> Subtract());
-      //  btnMultiply.setOnAction(e -> Multiply());
-      //  btnDivide.setOnAction(e -> Divide());
-     //   btnEquals.setOnAction(e -> Equals());
-    
+    	
     }
-
+    
+    //First Method
     public void Number (ActionEvent ae){
         String no = ((Button)ae.getSource()).getText();
         txt_result.setText(txt_result.getText()+no);
@@ -55,7 +56,7 @@ public class CalculatorController implements Initializable {
         }
     }  
     
-    // 3 Methode
+    // Third Method
     public void calculate (long n1, long n2, String op){
     
         switch (op){
@@ -70,4 +71,14 @@ public class CalculatorController implements Initializable {
                 txt_result.setText(n1/n2+ "");break;  
         }
     }
+    
+    public void goBackToMainMenu (ActionEvent event) throws IOException {
+		
+		Parent MainMenuView = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+		Scene MainMenuViewScene = new Scene (MainMenuView);
+		
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(MainMenuViewScene);
+		window.show();
+	}
 }
