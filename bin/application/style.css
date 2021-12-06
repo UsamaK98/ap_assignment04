@@ -1,0 +1,14 @@
+#head {
+    -fx-text-fill: navy;
+    -fx-font-weight: bold;
+    -fx-font-size: 20pt;
+    -fx-alignment: center;
+}
+#convertButton {
+    -fx-background-color: navy;
+    -fx-text-fill: white;
+    -fx-font-size: 12pt;
+    -fx-font-weight: bold;
+    -fx-padding: 5 10 5 10;
+    -fx-pref-width: Infinity;
+}

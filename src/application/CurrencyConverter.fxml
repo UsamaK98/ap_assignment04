@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane id="gridPane" alignment="center" hgap="15" prefHeight="300" prefWidth="400" vgap="15" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CurrencyConverterController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <padding>
+        <Insets bottom="25" left="25" right="25" top="25" />
+    </padding>
+    <Label fx:id="head" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0">
+        Currency Converter
+    </Label>
+    <ChoiceBox fx:id="leftChoicebox" value="CAD" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="CAD" />
+                <String fx:value="USD" />
+                <String fx:value="YEN" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+    <Button fx:id="swapButton" onAction="#handleSwapping" text="Swap" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <ChoiceBox fx:id="rightChoicebox" value="USD" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="CAD" />
+                <String fx:value="USD" />
+                <String fx:value="YEN" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+    <TextField fx:id="userInput" minHeight="16" minWidth="20" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Button fx:id="resetButton" onAction="#handleReset" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Label fx:id="label" minHeight="16" minWidth="69" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <Button fx:id="convertButton" onAction="#handleConversion" text="Convert" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="3" GridPane.rowSpan="2" />
+   <Button mnemonicParsing="false" onAction="#goBackToMainMenu" prefHeight="41.0" prefWidth="174.0" text="Back To Main Menu" GridPane.rowIndex="5" />
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

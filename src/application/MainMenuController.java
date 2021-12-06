@@ -27,6 +27,16 @@ public class MainMenuController implements Initializable {
 		window.setScene(MainMenuViewScene);
 		window.show();
 	}
+	
+	public void switchToCurrencyConverter (ActionEvent event) throws IOException {
+		 	Parent CurrencyConverter = FXMLLoader.load(getClass().getResource("CurrencyConverter.fxml"));
+	        Scene scene = new Scene(CurrencyConverter);
+	        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        String css = this.getClass().getResource("style.css").toExternalForm();
+	        scene.getStylesheets().add(css);
+	        window.setScene(scene);
+	        window.show();
+	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
